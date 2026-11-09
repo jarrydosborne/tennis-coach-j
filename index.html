@@ -47,8 +47,10 @@ nav .btn{padding:8px 18px;font-size:.9rem}
 
 /* hero */
 .hero{background:var(--court);color:#fff;position:relative;overflow:hidden;padding:90px 0 110px}
+.hero .court{position:absolute;inset:0;pointer-events:none;opacity:.22}
 .hero .wrap{position:relative;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
-.hero h1{font-size:clamp(4.2rem,13vw,10rem);line-height:.88}
+.hero h1{font-size:clamp(3.4rem,15vw,8.5rem);line-height:.88}
+.hero h1 .nw{white-space:nowrap}
 .hero h1 em{font-style:normal;color:var(--ball)}
 .hero p.lead{font-size:1.2rem;max-width:520px;margin:22px 0 30px;color:#dfe9e3}
 .hero .ctas{display:flex;gap:14px;flex-wrap:wrap}
@@ -175,10 +177,22 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 </nav>
 
 <header class="hero" id="top">
+  <svg class="court" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g fill="none" stroke="#fff" stroke-width="4">
+      <rect x="80" y="60" width="1040" height="580"/>
+      <line x1="80" y1="130" x2="1120" y2="130"/>
+      <line x1="80" y1="570" x2="1120" y2="570"/>
+      <line x1="600" y1="130" x2="600" y2="570" stroke-dasharray="0"/>
+      <line x1="360" y1="130" x2="360" y2="570"/>
+      <line x1="840" y1="130" x2="840" y2="570"/>
+      <line x1="360" y1="350" x2="840" y2="350"/>
+      <line x1="600" y1="40" x2="600" y2="660" stroke-width="8" stroke-dasharray="6 10"/>
+    </g>
+  </svg>
   <div class="wrap">
     <div>
       <span class="tag">Austin, TX area &middot; all ages &middot; all levels</span>
-      <h1>Coach <em>J</em><br>Tennis</h1>
+      <h1><span class="nw">Coach <em>J</em></span><br>Tennis</h1>
       <p class="lead">Private, group and tennis fitness lessons. Whether you're picking up a racquet for the first time or getting ready for college tennis, we'll work on your game and have some fun doing it.</p>
       <div class="ctas">
         <a href="#contact" class="btn">Book a lesson</a>
