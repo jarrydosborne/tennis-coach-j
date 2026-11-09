@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coach J | Tennis Lessons in Austin, TX</title>
+<meta name="description" content="Private, group and tennis fitness lessons in the Austin area with Coach J. Beginners through tournament players and college-bound juniors.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --court:#123f2f;
+  --court-2:#0c2e22;
+  --ball:#d9f43b;
+  --chalk:#f5f6ec;
+  --ink:#14211b;
+  --muted:#4d5d55;
+  --line:rgba(255,255,255,.85);
+  --radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--chalk);color:var(--ink);font-family:"DM Sans",system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+h1,h2,h3,.display{font-family:"Anton",Impact,sans-serif;font-weight:400;letter-spacing:.01em;text-transform:uppercase;line-height:1}
+h2{font-size:clamp(2.2rem,5vw,3.6rem);margin-bottom:18px}
+.kicker{font-weight:700;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:var(--court);display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.kicker::before{content:"";width:14px;height:14px;border-radius:50%;background:var(--ball);box-shadow:inset -3px -2px 0 rgba(0,0,0,.12)}
+section{padding:88px 0}
+
+/* nav */
+nav{position:sticky;top:0;z-index:20;background:var(--court-2);color:#fff}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+.logo{font-family:"Anton";font-size:1.5rem;letter-spacing:.04em;text-decoration:none;display:flex;align-items:center;gap:8px}
+.logo span{color:var(--ball)}
+nav ul{list-style:none;display:flex;gap:26px;font-size:.95rem;font-weight:500}
+nav ul a{text-decoration:none;opacity:.85}
+nav ul a:hover{opacity:1;color:var(--ball)}
+.btn{display:inline-block;background:var(--ball);color:var(--court-2);font-weight:700;text-decoration:none;padding:13px 24px;border-radius:999px;border:2px solid var(--ball);transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.6)}
+nav .btn{padding:8px 18px;font-size:.9rem}
+@media(max-width:760px){nav ul{display:none}}
+
+/* hero */
+.hero{background:var(--court);color:#fff;position:relative;overflow:hidden;padding:90px 0 110px}
+.hero .court{position:absolute;inset:0;pointer-events:none;opacity:.22}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(4.2rem,13vw,10rem);line-height:.88}
+.hero h1 em{font-style:normal;color:var(--ball)}
+.hero p.lead{font-size:1.2rem;max-width:520px;margin:22px 0 30px;color:#dfe9e3}
+.hero .ctas{display:flex;gap:14px;flex-wrap:wrap}
+.hero .tag{display:inline-block;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:5px 14px;font-size:.85rem;margin-bottom:22px;letter-spacing:.04em}
+.hero-photo{position:relative}
+.hero-photo img{border-radius:var(--radius);aspect-ratio:4/5;object-fit:cover;object-position:center 30%;border:3px solid var(--line)}
+.hero-photo .ball{position:absolute;right:-18px;bottom:-22px;width:92px;height:92px}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero-photo{max-width:360px}}
+
+/* levels strip */
+.strip{background:var(--ball);color:var(--court-2);padding:18px 0;overflow:hidden}
+.strip .row{display:flex;gap:34px;white-space:nowrap;font-family:"Anton";font-size:1.35rem;text-transform:uppercase;animation:slide 30s linear infinite;width:max-content}
+.strip .row span::after{content:"\25CF";margin-left:34px;font-size:.7rem;vertical-align:middle}
+@keyframes slide{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.strip .row{animation:none}}
+
+/* lessons */
+.lessons-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px}
+.card{background:#fff;border-radius:var(--radius);padding:30px 26px;border:1px solid #e1e4d6;position:relative}
+.card h3{font-size:1.9rem;margin-bottom:6px;color:var(--court)}
+.card .sub{font-weight:700;font-size:.85rem;color:var(--muted);margin-bottom:14px;text-transform:uppercase;letter-spacing:.08em}
+.card ul{list-style:none;margin-top:14px}
+.card li{padding:7px 0 7px 22px;position:relative;border-top:1px dashed #dde1d0;font-size:.97rem}
+.card li::before{content:"";position:absolute;left:0;top:15px;width:9px;height:9px;border-radius:50%;background:var(--ball);outline:1px solid #b7cc2c}
+.card.hot{background:var(--court);color:#fff;border-color:var(--court)}
+.card.hot h3{color:var(--ball)}
+.card.hot .sub{color:#bcd3c7}
+.card.hot li{border-color:rgba(255,255,255,.18)}
+@media(max-width:900px){.lessons-grid{grid-template-columns:1fr}}
+
+/* goals */
+.goals{background:#fff;border-top:1px solid #e3e6d8;border-bottom:1px solid #e3e6d8}
+.goals-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:30px;border:2px solid var(--court);border-radius:var(--radius);overflow:hidden}
+.goal{padding:26px 24px;border-right:2px solid var(--court);border-bottom:2px solid var(--court)}
+.goal:nth-child(3n){border-right:0}
+.goal:nth-last-child(-n+3){border-bottom:0}
+.goal b{display:block;font-family:"Anton";font-size:1.35rem;text-transform:uppercase;color:var(--court);margin-bottom:4px}
+.goal p{color:var(--muted);font-size:.96rem}
+@media(max-width:800px){.goals-grid{grid-template-columns:1fr}.goal{border-right:0!important;border-bottom:2px solid var(--court)!important}.goal:last-child{border-bottom:0!important}}
+
+/* pricing */
+.pricing{background:var(--court-2);color:#fff;position:relative}
+.pricing .kicker{color:var(--ball)}
+.price-table{margin-top:34px;border-top:2px solid var(--line)}
+.price-row{display:grid;grid-template-columns:1.4fr 1fr auto;gap:20px;align-items:center;padding:24px 4px;border-bottom:1px solid rgba(255,255,255,.2)}
+.price-row h3{font-size:1.7rem}
+.price-row .what{color:#c9d8cf;font-size:.97rem}
+.price-row .amt{font-family:"Anton";font-size:2.6rem;color:var(--ball);text-align:right;line-height:1}
+.price-row .amt small{display:block;font-family:"DM Sans";font-size:.8rem;color:#c9d8cf;font-weight:500;margin-top:4px;text-transform:none}
+.price-note{margin-top:26px;color:#c9d8cf;font-size:.95rem;max-width:720px}
+@media(max-width:700px){.price-row{grid-template-columns:1fr auto}.price-row .what{grid-column:1/-1;grid-row:2}}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.about p{margin-bottom:16px;color:#2b3a33}
+.timeline{list-style:none;margin-top:24px;border-left:3px solid var(--court);padding-left:22px}
+.timeline li{position:relative;padding:0 0 18px}
+.timeline li::before{content:"";position:absolute;left:-31px;top:6px;width:15px;height:15px;border-radius:50%;background:var(--ball);border:3px solid var(--court)}
+.timeline b{display:block;font-size:1.02rem}
+.timeline span{color:var(--muted);font-size:.94rem}
+.photos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.photos img{border-radius:var(--radius);width:100%;height:100%;object-fit:cover}
+.photos .tall{grid-row:span 2}
+.photos figure{position:relative}
+.photos figcaption{position:absolute;left:10px;bottom:10px;background:rgba(12,46,34,.85);color:#fff;font-size:.78rem;padding:4px 10px;border-radius:999px}
+@media(max-width:900px){.about-grid{grid-template-columns:1fr}}
+
+/* dad */
+.dad{background:var(--ball);color:var(--court-2)}
+.dad .wrap{display:grid;grid-template-columns:auto 1fr;gap:50px;align-items:center}
+.dad .big{font-family:"Anton";font-size:clamp(6rem,16vw,11rem);line-height:.85}
+.dad .big small{display:block;margin-top:14px;font-size:1.3rem;letter-spacing:.06em}
+.dad p{font-size:1.15rem;max-width:620px}
+.dad h2{margin-bottom:12px}
+@media(max-width:760px){.dad .wrap{grid-template-columns:1fr;gap:20px}}
+
+/* fitness */
+.fit-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.fit-grid img{border-radius:var(--radius);aspect-ratio:1/1;object-fit:cover;object-position:center 35%}
+.badges{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+.badges span{background:var(--court);color:#fff;border-radius:999px;padding:6px 14px;font-size:.85rem;font-weight:500}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px}
+.stats div{border:2px solid var(--court);border-radius:12px;padding:14px;text-align:center}
+.stats b{display:block;font-family:"Anton";font-size:1.8rem;color:var(--court)}
+.stats span{font-size:.82rem;color:var(--muted)}
+@media(max-width:900px){.fit-grid{grid-template-columns:1fr}}
+
+/* contact */
+.contact{background:var(--court);color:#fff}
+.contact .kicker{color:var(--ball)}
+.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:50px}
+.contact p{color:#d4e2da}
+.contact a.mail{color:var(--ball);font-weight:700}
+form{background:#fff;color:var(--ink);border-radius:var(--radius);padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+form .full{grid-column:1/-1}
+label{font-size:.85rem;font-weight:700;display:block;margin-bottom:6px;color:var(--court)}
+input,select,textarea{width:100%;font:inherit;font-size:16px;padding:12px 14px;border:1.5px solid #cfd5c4;border-radius:10px;background:#fbfcf6;color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--court);box-shadow:0 0 0 3px rgba(217,244,59,.6)}
+textarea{min-height:110px;resize:vertical}
+form button{border:0;cursor:pointer;font:inherit;font-weight:700;background:var(--court);color:var(--ball);padding:15px;border-radius:999px;font-size:1.05rem}
+form button:hover{background:var(--court-2)}
+.form-msg{grid-column:1/-1;font-weight:700;display:none;padding:12px 14px;border-radius:10px}
+.form-msg.ok{display:block;background:#eef9c4;color:var(--court-2)}
+.form-msg.err{display:block;background:#fde3de;color:#7a1d10}
+@media(max-width:860px){.contact-grid{grid-template-columns:1fr}form{grid-template-columns:1fr}}
+
+footer{background:var(--court-2);color:#9fb8ab;font-size:.88rem;padding:28px 0}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#top" class="logo">COACH <span>J</span></a>
+    <ul>
+      <li><a href="#lessons">Lessons</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#fitness">Fitness</a></li>
+    </ul>
+    <a href="#contact" class="btn">Book a lesson</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <svg class="court" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g fill="none" stroke="#fff" stroke-width="4">
+      <rect x="80" y="60" width="1040" height="580"/>
+      <line x1="80" y1="130" x2="1120" y2="130"/>
+      <line x1="80" y1="570" x2="1120" y2="570"/>
+      <line x1="600" y1="130" x2="600" y2="570" stroke-dasharray="0"/>
+      <line x1="360" y1="130" x2="360" y2="570"/>
+      <line x1="840" y1="130" x2="840" y2="570"/>
+      <line x1="360" y1="350" x2="840" y2="350"/>
+      <line x1="600" y1="40" x2="600" y2="660" stroke-width="8" stroke-dasharray="6 10"/>
+    </g>
+  </svg>
+  <div class="wrap">
+    <div>
+      <span class="tag">Austin, TX area &middot; all ages &middot; all levels</span>
+      <h1>Coach <em>J</em><br>Tennis</h1>
+      <p class="lead">Private, group and tennis fitness lessons. Whether you're picking up a racquet for the first time or getting ready for college tennis, we'll work on your game and have some fun doing it.</p>
+      <div class="ctas">
+        <a href="#contact" class="btn">Book a lesson</a>
+        <a href="#pricing" class="btn ghost">See pricing</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="img/hero.jpg" alt="Coach J">
+      <svg class="ball" viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="46" fill="#d9f43b" stroke="#0c2e22" stroke-width="3"/>
+        <path d="M14 22c22 10 22 46 0 56M86 22c-22 10-22 46 0 56" fill="none" stroke="#fff" stroke-width="5"/>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<div class="strip" aria-hidden="true">
+  <div class="row">
+    <span>First-timers</span><span>Adult rec players</span><span>USTA &amp; league</span><span>Tournament prep</span><span>Match play</span><span>College-bound juniors</span><span>Tennis fitness</span>
+    <span>First-timers</span><span>Adult rec players</span><span>USTA &amp; league</span><span>Tournament prep</span><span>Match play</span><span>College-bound juniors</span><span>Tennis fitness</span>
+  </div>
+</div>
+
+<section id="lessons">
+  <div class="wrap">
+    <div class="kicker">Lessons</div>
+    <h2>Three ways to train</h2>
+    <p style="max-width:640px;color:var(--muted)">Privates and groups are built around technique. Tennis fitness is the fast one: you'll sweat, and you'll hit a lot of balls.</p>
+    <div class="lessons-grid">
+      <div class="card">
+        <h3>Private</h3>
+        <div class="sub">One on one &middot; technique</div>
+        <p>The quickest way to fix a stroke or build a game plan. We start with where you are and go from there.</p>
+        <ul>
+          <li>Stroke mechanics, footwork, serve</li>
+          <li>Match strategy and point construction</li>
+          <li>Tournament and college prep</li>
+          <li>Semi-private for 2 available</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Group</h3>
+        <div class="sub">Small groups &middot; technique</div>
+        <p>Learn alongside a few other players at your level. Drills, live ball and some friendly competition.</p>
+        <ul>
+          <li>Grouped by level, 3 to 6 players</li>
+          <li>Kids, juniors and adult groups</li>
+          <li>Doubles positioning and play</li>
+          <li>Bring friends and start your own group</li>
+        </ul>
+      </div>
+      <div class="card hot">
+        <h3>Tennis Fitness</h3>
+        <div class="sub">High tempo &middot; workout + hitting</div>
+        <p>Part tennis, part conditioning. Footwork ladders, agility and strength work mixed with nonstop feeding and live hitting.</p>
+        <ul>
+          <li>Fast paced, you'll get a real workout</li>
+          <li>Tons of balls hit every session</li>
+          <li>Great for players and non-players</li>
+          <li>Private or group</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="goals">
+  <div class="wrap">
+    <div class="kicker">Who I work with</div>
+    <h2>Beginner to competitive</h2>
+    <div class="goals-grid">
+      <div class="goal"><b>Brand new</b><p>Grips, rallying, scoring, and feeling comfortable on court.</p></div>
+      <div class="goal"><b>Getting back into it</b><p>Played years ago and want to shake the rust off.</p></div>
+      <div class="goal"><b>Match play</b><p>Turning practice into wins. Patterns, shot selection, staying calm on big points.</p></div>
+      <div class="goal"><b>Tournament prep</b><p>Building a plan for an upcoming UTR, USTA or league event.</p></div>
+      <div class="goal"><b>College recruiting</b><p>I've been through it. Training, rankings, video and what coaches look for.</p></div>
+      <div class="goal"><b>Kids &amp; juniors</b><p>Fundamentals the right way, and keeping it fun so they want to come back.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <div class="kicker">Pricing</div>
+    <h2>Simple rates</h2>
+    <div class="price-table">
+      <div class="price-row">
+        <h3>Private lesson</h3>
+        <div class="what">One on one, 60 minutes, technique focused</div>
+        <div class="amt">$75<small>per hour</small></div>
+      </div>
+      <div class="price-row">
+        <h3>Private 5-pack</h3>
+        <div class="what">Five 60-minute privates, use them within 2 months</div>
+        <div class="amt">$350<small>save $25</small></div>
+      </div>
+      <div class="price-row">
+        <h3>Group lesson</h3>
+        <div class="what">3 to 6 players grouped by level, 60 minutes</div>
+        <div class="amt">$35<small>per player</small></div>
+      </div>
+      <div class="price-row">
+        <h3>Tennis fitness, private</h3>
+        <div class="what">One on one workout plus hitting, 60 minutes</div>
+        <div class="amt">$65<small>per hour</small></div>
+      </div>
+      <div class="price-row">
+        <h3>Tennis fitness, group</h3>
+        <div class="what">High-tempo class, workout plus hitting, 60 minutes</div>
+        <div class="amt">$25<small>per player</small></div>
+      </div>
+    </div>
+    <p class="price-note">Court fees, if any, are separate. Want some fitness work mixed into a regular private or group? Just ask, no extra charge.</p>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div>
+      <div class="kicker">About</div>
+      <h2>I'm Jarryd</h2>
+      <p>I picked up a racquet at 5 and never really put it down. My dad was my coach growing up, and I've always loved sports, fitness and being outside.</p>
+      <p>I've coached on and off since college, from country clubs in Dallas to Palos Verdes in LA, and now I'm teaching in the Austin area. I like getting people moving, helping them learn the game, and keeping it fun along the way.</p>
+      <p>Off the court I'm a dad of 3, I play golf, and I run 20 to 25 miles a week.</p>
+      <ul class="timeline">
+        <li><b>Started at age 5</b><span>Coached by my dad from day one</span></li>
+        <li><b>Top 30 in Texas as a junior</b><span>Competed in the Junior Olympics</span></li>
+        <li><b>College tennis</b><span>Two seasons at Collin College</span></li>
+        <li><b>Dallas clubs</b><span>Stonebriar Country Club, The Lakes Tennis Club, Royal Oaks</span></li>
+        <li><b>Los Angeles</b><span>Palos Verdes Country Club</span></li>
+        <li><b>Now</b><span>Coaching in the Austin area</span></li>
+      </ul>
+    </div>
+    <div class="photos">
+      <figure class="tall"><img style="object-position:70% 50%" src="img/hike.jpg" alt="Jarryd hiking with his son"></figure>
+      <figure><img src="img/family.jpg" alt="Jarryd's family" style="aspect-ratio:1/1"><figcaption>Dad of 3</figcaption></figure>
+      <figure><img src="img/downtime.jpg" alt="Jarryd and his wife" style="aspect-ratio:1/1"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="dad">
+  <div class="wrap">
+    <div class="big">40+<small>years of coaching in the family</small></div>
+    <div>
+      <h2>Learned it from my dad</h2>
+      <p>My dad has been coaching tennis for over 40 years, all ages and all levels, and he's still on court today. A lot of how I teach comes straight from him: solid fundamentals, hard work, and enjoying the game.</p>
+    </div>
+  </div>
+</section>
+
+<section id="fitness">
+  <div class="wrap fit-grid">
+    <img src="img/training.jpg" alt="Jarryd training on the beach">
+    <div>
+      <div class="kicker">Fitness, on request</div>
+      <h2>Stronger legs, better tennis</h2>
+      <p>I'm a certified personal trainer and certified nutrition coach. If you want it, I'll build fitness work right into your lessons: footwork, agility, core and conditioning that actually carries over to the court. Ask about nutrition guidance too.</p>
+      <div class="badges">
+        <span>Certified Personal Trainer</span>
+        <span>Certified Nutrition Coach</span>
+      </div>
+      <div class="stats">
+        <div><b>5</b><span>age I started</span></div>
+        <div><b>25</b><span>miles a week</span></div>
+        <div><b>3</b><span>kids</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <div class="kicker">Contact</div>
+      <h2>Book a lesson</h2>
+      <p>Tell me a little about your game and what you're after. I'll get back to you within a day to find a time and a court.</p>
+      <p style="margin-top:16px">Or email me directly:<br><a class="mail" href="mailto:jarrydbosborne@gmail.com">jarrydbosborne@gmail.com</a></p>
+    </div>
+    <form id="lead-form" action="https://formsubmit.co/jarrydbosborne@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="New lesson request from Coach J site">
+      <input type="hidden" name="_template" value="table">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+      <div><label for="name">Name</label><input id="name" name="name" required></div>
+      <div><label for="email">Email</label><input id="email" type="email" name="email" required></div>
+      <div><label for="phone">Phone</label><input id="phone" type="tel" name="phone"></div>
+      <div><label for="type">Lesson type</label>
+        <select id="type" name="lesson_type">
+          <option>Private</option><option>Private 5-pack</option><option>Group</option>
+          <option>Tennis fitness (private)</option><option>Tennis fitness (group)</option><option>Not sure yet</option>
+        </select></div>
+      <div class="full"><label for="level">Level</label>
+        <select id="level" name="level">
+          <option>Brand new</option><option>Beginner</option><option>Intermediate</option>
+          <option>Advanced / tournament</option><option>Junior, college-bound</option>
+        </select></div>
+      <div class="full"><label for="msg">Anything else?</label><textarea id="msg" name="message" placeholder="Who's playing, goals, best days and times, part of Austin you're in"></textarea></div>
+      <div class="form-msg" id="form-msg"></div>
+      <button type="submit" class="full">Send request</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; <span id="yr"></span> Coach J Tennis &middot; Austin, TX</span>
+    <a href="mailto:jarrydbosborne@gmail.com">jarrydbosborne@gmail.com</a>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+const f = document.getElementById('lead-form'), m = document.getElementById('form-msg');
+f.addEventListener('submit', async e => {
+  e.preventDefault();
+  const b = f.querySelector('button'); b.disabled = true; b.textContent = 'Sending...';
+  try {
+    const r = await fetch('https://formsubmit.co/ajax/jarrydbosborne@gmail.com', {
+      method: 'POST', headers: {'Accept': 'application/json'}, body: new FormData(f)
+    });
+    if (!r.ok) throw 0;
+    f.reset(); m.className = 'form-msg ok'; m.textContent = "Got it, thanks! I'll be in touch soon.";
+  } catch {
+    m.className = 'form-msg err'; m.textContent = 'Something went wrong. Please email jarrydbosborne@gmail.com instead.';
+  }
+  b.disabled = false; b.textContent = 'Send request';
+});
+</script>
+</body>
+</html>
