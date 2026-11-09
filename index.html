@@ -47,7 +47,6 @@ nav .btn{padding:8px 18px;font-size:.9rem}
 
 /* hero */
 .hero{background:var(--court);color:#fff;position:relative;overflow:hidden;padding:90px 0 110px}
-.hero .court{position:absolute;inset:0;pointer-events:none;opacity:.22}
 .hero .wrap{position:relative;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
 .hero h1{font-size:clamp(4.2rem,13vw,10rem);line-height:.88}
 .hero h1 em{font-style:normal;color:var(--ball)}
@@ -57,7 +56,7 @@ nav .btn{padding:8px 18px;font-size:.9rem}
 .hero-photo{position:relative}
 .hero-photo img{border-radius:var(--radius);aspect-ratio:4/5;object-fit:cover;object-position:center 30%;border:3px solid var(--line)}
 .hero-photo .ball{position:absolute;right:-18px;bottom:-22px;width:92px;height:92px}
-@media(max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero-photo{max-width:360px}}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero-photo{max-width:360px}.hero-photo .ball{right:10px;bottom:-18px;width:72px;height:72px}}
 
 /* levels strip */
 .strip{background:var(--ball);color:var(--court-2);padding:18px 0;overflow:hidden}
@@ -110,9 +109,9 @@ nav .btn{padding:8px 18px;font-size:.9rem}
 .timeline li::before{content:"";position:absolute;left:-31px;top:6px;width:15px;height:15px;border-radius:50%;background:var(--ball);border:3px solid var(--court)}
 .timeline b{display:block;font-size:1.02rem}
 .timeline span{color:var(--muted);font-size:.94rem}
-.photos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.photos img{border-radius:var(--radius);width:100%;height:100%;object-fit:cover}
-.photos .tall{grid-row:span 2}
+.photos{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
+.photos .col{display:grid;gap:14px}
+.photos img{border-radius:var(--radius);width:100%;height:auto}
 .photos figure{position:relative}
 .photos figcaption{position:absolute;left:10px;bottom:10px;background:rgba(12,46,34,.85);color:#fff;font-size:.78rem;padding:4px 10px;border-radius:999px}
 @media(max-width:900px){.about-grid{grid-template-columns:1fr}}
@@ -128,7 +127,7 @@ nav .btn{padding:8px 18px;font-size:.9rem}
 
 /* fitness */
 .fit-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
-.fit-grid img{border-radius:var(--radius);aspect-ratio:1/1;object-fit:cover;object-position:center 35%}
+.fit-grid img{border-radius:var(--radius);width:100%;max-width:460px;height:auto}
 .badges{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
 .badges span{background:var(--court);color:#fff;border-radius:999px;padding:6px 14px;font-size:.85rem;font-weight:500}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px}
@@ -176,18 +175,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 </nav>
 
 <header class="hero" id="top">
-  <svg class="court" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-    <g fill="none" stroke="#fff" stroke-width="4">
-      <rect x="80" y="60" width="1040" height="580"/>
-      <line x1="80" y1="130" x2="1120" y2="130"/>
-      <line x1="80" y1="570" x2="1120" y2="570"/>
-      <line x1="600" y1="130" x2="600" y2="570" stroke-dasharray="0"/>
-      <line x1="360" y1="130" x2="360" y2="570"/>
-      <line x1="840" y1="130" x2="840" y2="570"/>
-      <line x1="360" y1="350" x2="840" y2="350"/>
-      <line x1="600" y1="40" x2="600" y2="660" stroke-width="8" stroke-dasharray="6 10"/>
-    </g>
-  </svg>
   <div class="wrap">
     <div>
       <span class="tag">Austin, TX area &middot; all ages &middot; all levels</span>
@@ -326,9 +313,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       </ul>
     </div>
     <div class="photos">
-      <figure class="tall"><img style="object-position:70% 50%" src="img/hike.jpg" alt="Jarryd hiking with his son"></figure>
-      <figure><img src="img/family.jpg" alt="Jarryd's family" style="aspect-ratio:1/1"><figcaption>Dad of 3</figcaption></figure>
-      <figure><img src="img/downtime.jpg" alt="Jarryd and his wife" style="aspect-ratio:1/1"></figure>
+      <div class="col"><figure><img src="img/hike.jpg" alt="Jarryd hiking with his son"></figure></div>
+      <div class="col">
+        <figure><img src="img/family.jpg" alt="Jarryd's family"><figcaption>Dad of 3</figcaption></figure>
+        <figure><img src="img/downtime.jpg" alt="Jarryd and his wife"></figure>
+      </div>
     </div>
   </div>
 </section>
@@ -345,7 +334,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 <section id="fitness">
   <div class="wrap fit-grid">
-    <img src="img/training.jpg" alt="Jarryd training on the beach">
+    <img src="img/me.jpg" alt="Coach J">
     <div>
       <div class="kicker">Fitness, on request</div>
       <h2>Stronger legs, better tennis</h2>
